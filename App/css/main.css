@@ -175,6 +175,30 @@ textarea[contenteditable] {
   /* Style adjustments for viewports that meet the condition */ }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   /* Style adjustments for viewports that meet the condition */ }
-/* line 4, src/main.scss */
+/* Colors */
+/* Fonts */
+@font-face {
+  font-family: "Existence";
+  src: url(/css/fonts/existence-light-webfont.woff);
+  src: url(/css/fonts/existence-light-webfont.woff?#iefix) format('eot'), url(/css/fonts/existence-light-webfont.woff) format('woff'), url(/css/fonts/existence-light-webfont.ttf) format('truetype'), url(/css/fonts/existence-light-webfont.svg) format('svg'); }
+
+/* line 6, src/main.scss */
 header.main-header {
-  background: blue; }
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #37234c), color-stop(100%, #614c75));
+  background: -webkit-linear-gradient(top, #37234c, #614c75);
+  background: -moz-linear-gradient(top, #37234c, #614c75);
+  background: -o-linear-gradient(top, #37234c, #614c75);
+  background: linear-gradient(top, #37234c, #614c75); }
+  /* line 8, src/main.scss */
+  header.main-header .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: existence; }

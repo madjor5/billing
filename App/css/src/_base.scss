@@ -1,1 +1,6 @@
 @import "mobileBoilerplate";
+
+/* Colors */
+$white:              #fff;
+/* Fonts */
+@include font-face("Existence", font-files("/css/fonts/existence-light-webfont.woff", "woff", "/css/fonts/existence-light-webfont.ttf", truetype, "/css/fonts/existence-light-webfont.svg", "svg"), "/css/fonts/existence-light-webfont.woff");

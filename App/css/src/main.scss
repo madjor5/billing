@@ -1,7 +1,20 @@
 @import "compass/css3/images";
+@import "compass/css3/box-sizing";
+@import "compass/css3/font-face";
 @import "base";
 
 header.main-header {
-  background: blue
+  @include background(linear-gradient(top, #37234c, #614c75));
+  .logo {
+    color: $white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    @include box-sizing(border-box);
+    font-family: existence
+  }
 }
 
