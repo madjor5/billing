@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <!--
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        -->
+
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+        <!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+        <!-- Add your site or application content here -->
+        <header>
+          <a href="/" class="logo">mit-logo</a>
+          <nav class="main-nav">
+            <a href="#nav">|||</a>
+            <ul id="nav">
+              <li><a href="#">Kunder</a></li>
+              <li><a href="#">Statistik</a></li>
+            </ul>
+          </nav>
+        </header>
+        <div class="main frontpage">
+          <article>
+            <header>
+              <h1>TODO List</h1>
+            </header>
+            <ul>
+              <li>CSS Framework - SASS, Compass</li>
+              <li>Navigation</li>
+              <li>Basic Angular setup</li>
+              <li>Create JSON for sections (Menupunkterne)</li>
+              <li>Kundeliste
+                <ul>
+                  <li>Hente data</li>
+                  <li>Rendere og lav links til kundesiden</li>
+                  <li>Kundeside - Hvad skal den indeholde
+                    <ul>
+                      <li>Åbne fakturaer
+                        <ul>
+                          <li>Redigér</li>
+                          <li>Start timer på eksisterende eller ny linje</li>
+                        </ul>
+                      </li>
+                      <li>Faktura arkiv</li>
+                      <li>Noget statistik om hvad man har tjent og hvad kunden skylder</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Finanser
+                <ul>
+                  <li>Overskud / underskud - balance</li>
+                  <li>Moms regnskabet</li>
+                  <li>Udestående / Forfaldne fakturaer</li>
+                </ul>
+              </li>
+              <li>
+                Man kunne måske binde noget op på ical og få lavet en sammenbinding med aftaler og hvor man starter en timer???
+              </li>
+            </ul>
+          </article>
+          <article>
+            <header>
+              <h1>Shortcuts</h1>
+            </header>
+            <ul class="shortcuts">
+              <li>Start timer</li>
+              <li>Check faktura status</li>
+              <li>Moms afregning</li>
+            </ul>
+          </article>
+          <article>
+            <header>
+              <h1>Statistik</h1>
+            </header>
+            <p>noget graph halløj, der kan vise hvordan det går i biksen</p>
+            <p>Hvad er mest brugbart? Overskud/underskud, eller er det hvor mange penge der er ude og stå, og måske endda forfaldne?</p>
+          </article>
+        </div>
+
+        <script src="js/vendor/zepto.min.js"></script>
+        <script src="js/helper.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+            g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+            s.parentNode.insertBefore(g,s)}(document,"script"));
+        </script>
+    </body>
+</html>
