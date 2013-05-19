@@ -1,10 +1,7 @@
-@import "compass/css3/images";
-@import "compass/css3/box-sizing";
-@import "compass/css3/font-face";
 @import "base";
 
 header.main-header {
-  @include background(linear-gradient(top, #37234c, #614c75));
+  @include background(linear-gradient(top, $purple-dark, $purple-light));
   position: relative;
   .logo {
     color: $white;

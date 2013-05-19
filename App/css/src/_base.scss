@@ -1,8 +1,13 @@
+@import "compass/css3/images";
+@import "compass/css3/box-sizing";
+@import "compass/css3/font-face";
 @import "mobileBoilerplate";
 
 /* Colors */
-$white:              #fff;
-$gray:               #333;
+$white:               #fff;
+$gray:                #333;
+$purple-dark:         #37234c;
+$purple-light:        #614c75;
 
 /* Fonts */
 @include font-face("Existence", font-files("/css/fonts/existence-light-webfont.woff", "woff", "/css/fonts/existence-light-webfont.ttf", truetype, "/css/fonts/existence-light-webfont.svg", "svg"), "/css/fonts/existence-light-webfont.woff");

@@ -216,15 +216,27 @@ header.main-header:target .main-nav ul {
   position: absolute;
   left: 0;
   top: 100%;
-  width: 100%; }
-/* line 44, src/_navigation.scss */
+  width: 100%;
+  padding: 10px 0;
+  list-style: none; }
+  /* line 45, src/_navigation.scss */
+  header.main-header:target .main-nav ul li {
+    display: block;
+    padding: 3px 20px; }
+    /* line 48, src/_navigation.scss */
+    header.main-header:target .main-nav ul li a {
+      text-decoration: none;
+      color: #37234c;
+      display: block;
+      text-decoration: none; }
+/* line 56, src/_navigation.scss */
 header.main-header:target .main-nav .close {
   display: block; }
-/* line 47, src/_navigation.scss */
+/* line 59, src/_navigation.scss */
 header.main-header:target .main-nav .open {
   display: none; }
 
-/* line 6, src/main.scss */
+/* line 3, src/main.scss */
 header.main-header {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #37234c), color-stop(100%, #614c75));
   background: -webkit-linear-gradient(top, #37234c, #614c75);
@@ -232,7 +244,7 @@ header.main-header {
   background: -o-linear-gradient(top, #37234c, #614c75);
   background: linear-gradient(top, #37234c, #614c75);
   position: relative; }
-  /* line 9, src/main.scss */
+  /* line 6, src/main.scss */
   header.main-header .logo {
     color: white;
     text-decoration: none;

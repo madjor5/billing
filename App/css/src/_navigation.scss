@@ -40,6 +40,18 @@ header.main-header:target {
       left: 0;
       top: 100%;
       width: 100%;
+      padding: 10px 0;
+      list-style: none;
+      li {
+        display: block;
+        padding: 3px 20px;
+        a {
+          text-decoration: none;
+          color: $purple-dark;
+          display: block;
+          text-decoration: none;
+        }
+      }
     }
     .close {
       display: block;
