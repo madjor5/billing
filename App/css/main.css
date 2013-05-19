@@ -182,14 +182,57 @@ textarea[contenteditable] {
   src: url(/css/fonts/existence-light-webfont.woff);
   src: url(/css/fonts/existence-light-webfont.woff?#iefix) format('eot'), url(/css/fonts/existence-light-webfont.woff) format('woff'), url(/css/fonts/existence-light-webfont.ttf) format('truetype'), url(/css/fonts/existence-light-webfont.svg) format('svg'); }
 
+/* line 1, src/_navigation.scss */
+nav.main-nav {
+  float: right; }
+  /* line 3, src/_navigation.scss */
+  nav.main-nav ul {
+    display: none;
+    background: white;
+    border-bottom: solid 2px #333333;
+    padding: 20px;
+    margin: 0; }
+  /* line 17, src/_navigation.scss */
+  nav.main-nav a.nav-link {
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    font-size: 20px; }
+    /* line 24, src/_navigation.scss */
+    nav.main-nav a.nav-link:hover {
+      text-decoration: none; }
+    /* line 27, src/_navigation.scss */
+    nav.main-nav a.nav-link.close {
+      display: none; }
+    /* line 30, src/_navigation.scss */
+    nav.main-nav a.nav-link.open {
+      display: block; }
+
+/* line 37, src/_navigation.scss */
+header.main-header:target .main-nav ul {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%; }
+/* line 44, src/_navigation.scss */
+header.main-header:target .main-nav .close {
+  display: block; }
+/* line 47, src/_navigation.scss */
+header.main-header:target .main-nav .open {
+  display: none; }
+
 /* line 6, src/main.scss */
 header.main-header {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #37234c), color-stop(100%, #614c75));
   background: -webkit-linear-gradient(top, #37234c, #614c75);
   background: -moz-linear-gradient(top, #37234c, #614c75);
   background: -o-linear-gradient(top, #37234c, #614c75);
-  background: linear-gradient(top, #37234c, #614c75); }
-  /* line 8, src/main.scss */
+  background: linear-gradient(top, #37234c, #614c75);
+  position: relative; }
+  /* line 9, src/main.scss */
   header.main-header .logo {
     color: white;
     text-decoration: none;
@@ -197,7 +240,7 @@ header.main-header {
     padding: 20px;
     display: inline-block;
     width: 100%;
-    text-align: center;
+    text-align: left;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;

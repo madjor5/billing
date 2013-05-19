@@ -5,6 +5,7 @@
 
 header.main-header {
   @include background(linear-gradient(top, #37234c, #614c75));
+  position: relative;
   .logo {
     color: $white;
     text-decoration: none;
@@ -12,7 +13,7 @@ header.main-header {
     padding: 20px;
     display: inline-block;
     width: 100%;
-    text-align: center;
+    text-align: left;
     @include box-sizing(border-box);
     font-family: existence
   }
