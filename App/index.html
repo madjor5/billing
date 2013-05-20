@@ -39,7 +39,7 @@
         <script src="lib/angular/angular.js"></script>
         <script src="js/controllers.js"></script>
     </head>
-    <body ng-controller="PhoneListCtrl">
+    <body ng-controller="BillysBillingCtrl">
 
         <!-- Add your site or application content here -->
         <header class="main-header" id="nav">
@@ -48,7 +48,7 @@
             <a href="#nav" class="nav-link open">|||</a>
             <a href="#" class="nav-link close">|||</a>
             <ul>
-              <li ng-repeat="section in sections"><a href="#">{{phone.name}}</a></li>
+              <li ng-repeat="section in sections"><a href="#/{{section.page}}">{{section.name}}</a></li>
             </ul>
           </nav>
         </header>
