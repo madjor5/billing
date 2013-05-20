@@ -1,0 +1,10 @@
+[
+  {
+    "name":"Kunder",
+    "page":"customers"
+  },
+  {
+    "name":"Min organisation",
+    "page":"organization"
+  }
+]

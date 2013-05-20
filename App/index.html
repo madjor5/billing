@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
-<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js" ng-app> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <title></title>
@@ -35,9 +35,11 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="lib/angular/angular.js"></script>
+        <script src="js/controllers.js"></script>
     </head>
-    <body>
+    <body ng-controller="PhoneListCtrl">
 
         <!-- Add your site or application content here -->
         <header class="main-header" id="nav">
@@ -46,15 +48,14 @@
             <a href="#nav" class="nav-link open">|||</a>
             <a href="#" class="nav-link close">|||</a>
             <ul>
-              <li><a href="#">Kunder</a></li>
-              <li><a href="#">Statistik</a></li>
+              <li ng-repeat="section in sections"><a href="#">{{phone.name}}</a></li>
             </ul>
           </nav>
         </header>
         <div class="main frontpage">
           <article>
             <header>
-              <h1>TODO List</h1>
+              <h1>TODO List{{5 + 1}}</h1>
             </header>
             <ul>
               <li>CSS Framework - SASS, Compass</li>
