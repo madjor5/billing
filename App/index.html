@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
-<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js" ng-app> <!--<![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js" ng-app="BillysBilling"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <title></title>
@@ -37,6 +37,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="lib/angular/angular.js"></script>
+        <script src="js/app.js"></script>
         <script src="js/controllers.js"></script>
     </head>
     <body ng-controller="BillysBillingCtrl">
@@ -52,65 +53,8 @@
             </ul>
           </nav>
         </header>
-        <div class="main frontpage">
-          <article>
-            <header>
-              <h1>TODO List</h1>
-            </header>
-            <ul>
-              <li>CSS Framework - SASS, Compass</li>
-              <li>Navigation</li>
-              <li>Basic Angular setup</li>
-              <li>Create JSON for sections (Menupunkterne)</li>
-              <li>Kundeliste
-                <ul>
-                  <li>Hente data</li>
-                  <li>Rendere og lav links til kundesiden</li>
-                  <li>Kundeside - Hvad skal den indeholde
-                    <ul>
-                      <li>Åbne fakturaer
-                        <ul>
-                          <li>Redigér</li>
-                          <li>Start timer på eksisterende eller ny linje</li>
-                        </ul>
-                      </li>
-                      <li>Faktura arkiv</li>
-                      <li>Noget statistik om hvad man har tjent og hvad kunden skylder</li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Finanser
-                <ul>
-                  <li>Overskud / underskud - balance</li>
-                  <li>Moms regnskabet</li>
-                  <li>Udestående / Forfaldne fakturaer</li>
-                </ul>
-              </li>
-              <li>
-                Man kunne måske binde noget op på ical og få lavet en sammenbinding med aftaler og hvor man starter en timer???
-              </li>
-            </ul>
-          </article>
-          <article>
-            <header>
-              <h1>Shortcuts</h1>
-            </header>
-            <ul class="shortcuts">
-              <li>Start timer</li>
-              <li>Check faktura status</li>
-              <li>Moms afregning</li>
-            </ul>
-          </article>
-          <article>
-            <header>
-              <h1>Statistik</h1>
-            </header>
-            <p>noget graph halløj, der kan vise hvordan det går i biksen</p>
-            <p>Hvad er mest brugbart? Overskud/underskud, eller er det hvor mange penge der er ude og stå, og måske endda forfaldne?</p>
-          </article>
-        </div>
+
+        <div ng-view></div>
 
         <script src="js/vendor/zepto.min.js"></script>
         <script src="js/helper.js"></script>
