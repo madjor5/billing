@@ -1,1 +1,9 @@
-Login screen
+<div class="main login">
+  <h1>Login to Billy's Billing</h1>
+  <p>For now, you'll have to login using your app id!</p>
+  <div class="form">
+    <label for="AppId">App ID:</label>
+    <input type="password" name="appID" ng-model="appID" />
+    <button ng-click="handleLogin($event)">Sign in</button>
+  </div>
+</div>

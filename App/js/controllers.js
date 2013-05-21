@@ -22,10 +22,24 @@ function BillysBillingCtrl($scope, $http, $location, $cookies) {
   });
 };
 
-function LoginCtrl($scope) {
+function LoginCtrl($scope, $cookies) {
   // detect click on submit
 
   // set cookie and Logged In
+  $scope.handleLogin = function(event) {
+    var appID = $scope.appID;
+    if(appID.length < 1) {
+      alert('Fill in correct app id');
+      return false;
+    }
+    event.preventDefault();
+    // Set logged in to entered value
+    $scope.loggedIn = $scope.appID;
+    $cookies.login = $scope.loggedIn;
+    // Make an API call to check if appID is valid
+
+    alert($scope.appID);
+  }
 
   // Redirect to front
 }
