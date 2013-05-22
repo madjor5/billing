@@ -190,9 +190,24 @@ nav.main-nav {
     display: none;
     background: white;
     border-bottom: solid 2px #333333;
-    padding: 20px;
-    margin: 0; }
-  /* line 17, src/_navigation.scss */
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    padding: 10px 0;
+    list-style: none; }
+    /* line 14, src/_navigation.scss */
+    nav.main-nav ul li {
+      display: block;
+      padding: 3px 20px; }
+      /* line 17, src/_navigation.scss */
+      nav.main-nav ul li a {
+        text-decoration: none;
+        color: #37234c;
+        display: block;
+        text-decoration: none; }
+  /* line 25, src/_navigation.scss */
   nav.main-nav a.nav-link {
     color: white;
     position: absolute;
@@ -200,41 +215,9 @@ nav.main-nav {
     right: 20px;
     text-decoration: none;
     font-size: 20px; }
-    /* line 24, src/_navigation.scss */
+    /* line 32, src/_navigation.scss */
     nav.main-nav a.nav-link:hover {
       text-decoration: none; }
-    /* line 27, src/_navigation.scss */
-    nav.main-nav a.nav-link.close {
-      display: none; }
-    /* line 30, src/_navigation.scss */
-    nav.main-nav a.nav-link.open {
-      display: block; }
-
-/* line 37, src/_navigation.scss */
-header.main-header:target .main-nav ul {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  width: 100%;
-  padding: 10px 0;
-  list-style: none; }
-  /* line 45, src/_navigation.scss */
-  header.main-header:target .main-nav ul li {
-    display: block;
-    padding: 3px 20px; }
-    /* line 48, src/_navigation.scss */
-    header.main-header:target .main-nav ul li a {
-      text-decoration: none;
-      color: #37234c;
-      display: block;
-      text-decoration: none; }
-/* line 56, src/_navigation.scss */
-header.main-header:target .main-nav .close {
-  display: block; }
-/* line 59, src/_navigation.scss */
-header.main-header:target .main-nav .open {
-  display: none; }
 
 /* line 3, src/main.scss */
 header.main-header {
