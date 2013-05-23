@@ -3,6 +3,9 @@
 /* Controllers */
 
 function BillysBillingCtrl($scope, $http, $location, $cookies) {
+  // Api base URL
+  $scope.apiBaseUrl = 'https://api.billysbilling.dk/v1';
+
   // Login handler Checks whenever a page is loaded, is there a login
   $scope.$watch(function(){
     return $location.path();
@@ -34,12 +37,13 @@ function LoginCtrl($scope, $cookies, $location) {
       alert('Fill in correct app id');
       return false;
     }
+    // Make an API call to check if appID is valid
+    var url = $scope.appID+":&"+$scope.apiBaseUrl;
+    console.log("TODO: make REST call to validate App ID");
     // Set logged in to entered value
     $scope.loggedIn = $scope.appID;
     // Set cookie to appID
     $cookies.login = $scope.loggedIn;
-    // Make an API call to check if appID is valid
-    console.log("TODO: make REST call to validate App ID");
     // Redirect to frontpage
     $location.path('/front');
   }

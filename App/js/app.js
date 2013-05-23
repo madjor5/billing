@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('BillysBilling', ['ngCookies']).
+angular.module('BillysBilling', ['ngCookies', 'billysBillingServices']).
   config(['$routeProvider', function($routeProvider) {
   $routeProvider.
     when('/login', {templateUrl: 'partials/login.html', controller: LoginCtrl}).
