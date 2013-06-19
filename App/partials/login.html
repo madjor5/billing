@@ -2,8 +2,11 @@
   <h1>Login to Billy's Billing</h1>
   <p>For now, you'll have to login using your app id!</p>
   <div class="form" ng-controller="LoginCtrl">
-    <label for="appID">App ID:</label>
-    <input type="password" name="appID" id="appID" ng-model="appID" />
-    <button ng-click="handleLogin($event)">Sign in</button>
+    <form ng-submit="submit()">
+      <label for="appID">App ID:</label>
+      <input type="password" name="appID" id="appID" ng-model="username" />
+      <input type="hidden" name="pass" ng-model="password" />
+      <input type="submit" value="Log ind" />
+    </form>
   </div>
 </div>

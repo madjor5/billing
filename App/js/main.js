@@ -1,5 +1,4 @@
 // Navigation script
-console.log("whtat?");
 $(".nav-link").on('click', function(e){
   $('.main-nav > ul').toggle();
   return false;
