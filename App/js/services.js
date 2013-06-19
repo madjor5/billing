@@ -3,7 +3,7 @@
 var apiBaseUrl = 'api.billysbilling.dk/v1';
 /* Services */
 angular.module('billysBillingServices', ['ngResource']).
-  factory('Login', function($log, $http, $cookies, $location) {
+  factory('Login', function($rootScope, $log, $http, $cookies, $location) {
     return {
       login: function(appID) {
         $http.get(

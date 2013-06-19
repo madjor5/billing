@@ -1,11 +1,10 @@
 'use strict';
 
 /* Controllers */
-
 function BillysBillingCtrl($scope, $log, $location, $cookies, $http) {
   // Api base URL
   $scope.apiBaseUrl = 'https://api.billysbilling.dk/v1';
-  $log.info($location.path(), $cookies);
+  $log.info("main controller", $cookies);
   // Login handler Checks whenever a page is loaded, is there a login
   $scope.$watch(function(){
     return $location.path();
@@ -13,7 +12,9 @@ function BillysBillingCtrl($scope, $log, $location, $cookies, $http) {
     if($scope.loggedIn == null && newValue!='/login' && $cookies.login==null) {
       $location.path('/login');
     } else {
+      $scope.appID = $cookies.appID;
       $scope.loggedIn = $cookies.login;
+      $log.info("Scope", $scope);
     }
   });
 
@@ -33,6 +34,7 @@ function LoginCtrl($scope, $cookies, $location, $http, $log, Login) {
       alert('Fill in correct app id');
       return false;
     }
+    $cookies.appID = $scope.appID;
     Login.login();
   }
 }
@@ -41,9 +43,12 @@ function FrontpageCtrl($scope, $routeParams, $log, $cookies) {
   $log.info($cookies)
 };
 
-function CustomerListCtrl($scope, $http) {
-  $http.get('data/customers.json').success(function(data){
-    $scope.customers = data;
+function CustomerListCtrl($scope, $http, $log) {
+  $log.info($scope);
+  $http.defaults.headers.common['Authorization'] = 'Basic '+Base64.encode($scope.appID + ':');
+  $http.get($scope.apiBaseUrl+"/contacts").success(function(data){
+    $log.info(data.contacts);
+    $scope.customers = data.contacts;
   });
 };
 
