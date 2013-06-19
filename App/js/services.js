@@ -3,30 +3,6 @@
 var apiBaseUrl = 'api.billysbilling.dk/v1';
 /* Services */
 angular.module('billysBillingServices', ['ngResource']).
-  // factory('Sections', function($rootScope, $http, $log) {
-  //   return {
-  //     getSections: function() {
-  //       $http.get('data/sections.json').success(function(data) {
-  //           $rootScope.sections=data;
-  //           return data;
-  //           $log.info($rootScope.$root);
-  //         });
-  //     }
-  //   }
-  // }).
-  factory('Sections', function($resource) {
-    var url = "/data/sections.json";
-    return $resource(
-      url,
-      {},
-      {
-        query: {
-          method:'GET', 
-          params:{}, 
-          isArray:false
-        }
-    });
-  }).
   factory('Login', function($log, $http, $cookies, $location) {
     return {
       login: function(appID) {
