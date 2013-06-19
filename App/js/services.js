@@ -8,7 +8,7 @@ angular.module('billysBillingServices', ['ngResource']).
       login: function(appID) {
         $http.get(
           'https\://'+apiBaseUrl
-          ).success(function(data, status, headers, config){
+          ).success(function(data){
             if(data.success = true) {
               $cookies.login = "true";
               $location.path("/front");
@@ -16,7 +16,7 @@ angular.module('billysBillingServices', ['ngResource']).
             } else {
               return false;
             }
-          }).error(function(data, status, headers, config){
+          }).error(function(data){
             $log.error("Login return error", data);
             return false;
           });
