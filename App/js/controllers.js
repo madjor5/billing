@@ -54,6 +54,10 @@ function CustomerDetailCtr($scope, $routeParams, $http, $log) {
   $http.get($scope.apiBaseUrl+"/contacts/"+$routeParams.customerID).success(function(data){
     $scope.contact = data;
   });
+  $http.get($scope.apiBaseUrl+"/invoices?contactId="+$routeParams.customerID).success(function(data){
+    $log.info(data.invoices);
+    $scope.invoices = data.invoices;
+  });
 };
 
 

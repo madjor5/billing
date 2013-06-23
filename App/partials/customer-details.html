@@ -1,8 +1,12 @@
 <section class="main">
   <h1>{{contact.name}}</h1>
-  <ul>
-    <li ng-repeat="customer in customers">
-      <a href="#/customers/{{customer.id}}">{{customer.name}}</a>
+  
+  <h2>Invoices <a href="#">Ny</a></h2>
+  <ul class="invoices">
+    <li ng-repeat="invoice in invoices">
+      <span class="invoiceNo">{{invoice.invoiceNo || "-"}}</span>
+      <a href="#">{{invoice.lines[0].description || invoice.lines[0].product.name}}</a>
+      <span class="date">dd-mm-yyyy</span>
     </li>
   </ul>
 </section>
