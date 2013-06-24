@@ -13,6 +13,7 @@
       <span class="invoiceNo">{{invoice.invoiceNo || "-"}}</span>
       <a href="#">{{invoice.lines[0].description || invoice.lines[0].product.name}}</a>
       <span class="date">{{invoice.createdTime | date:shortDate}}</span>
+      <span class="price">{{invoice.amount | currency:""}}
     </li>
   </ul>
 </section>
