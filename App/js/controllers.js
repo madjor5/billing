@@ -53,10 +53,19 @@ function CustomerDetailCtr($scope, $routeParams, $http, $log) {
   $http.defaults.headers.common['Authorization'] = 'Basic '+Base64.encode($scope.appID + ':');
   $http.get($scope.apiBaseUrl+"/contacts/"+$routeParams.customerID).success(function(data){
     $scope.contact = data;
+    $log.info("contact", data);
   });
   $http.get($scope.apiBaseUrl+"/invoices?contactId="+$routeParams.customerID).success(function(data){
-    $log.info(data.invoices);
+    $log.info("invoices", data.invoices);
     $scope.invoices = data.invoices;
+  });
+};
+
+function InvoiceCtrl($scope, $routeParams, $http, $log) {
+  $http.defaults.headers.common['Authorization'] = 'Basic '+Base64.encode($scope.appID + ':');
+  $http.get($scope.apiBaseUrl+"/invoices/"+$routeParams.invoiceID).success(function(data){
+    $log.info("invoice", data);
+    $scope.invoice = data;
   });
 };
 

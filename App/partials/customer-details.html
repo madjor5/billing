@@ -11,9 +11,9 @@
   <ul class="invoices">
     <li ng-repeat="invoice in invoices | filter:query | filter:filter">
       <span class="invoiceNo">{{invoice.invoiceNo || "-"}}</span>
-      <a href="#">{{invoice.lines[0].description || invoice.lines[0].product.name}}</a>
+      <a href="#/customers/{{contact.id}}/{{invoice.id}}">{{invoice.lines[0].description || invoice.lines[0].product.name}}</a>
       <span class="date">{{invoice.createdTime | date:shortDate}}</span>
-      <span class="price">{{invoice.amount | currency:""}}
+      <span class="price">{{invoice.amount | currency:""}}</span>
     </li>
   </ul>
 </section>

@@ -219,6 +219,50 @@ nav.main-nav {
     nav.main-nav a.nav-link:hover {
       text-decoration: none; }
 
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+/* line 7, src/_functions.scss */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table; }
+
+/* line 12, src/_functions.scss */
+.clearfix:after {
+  clear: both; }
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+/* line 21, src/_functions.scss */
+.clearfix {
+  *zoom: 1; }
+
+/* line 5, src/_invoice.scss */
+label, .label {
+  float: left;
+  width: 40%;
+  display: block; }
+
+/* line 10, src/_invoice.scss */
+.value {
+  float: left;
+  width: 60%;
+  display: block; }
+
+/* line 16, src/_invoice.scss */
+th, td {
+  text-align: left;
+  padding: 5px;
+  border-bottom: solid 1px #ccc; }
+
+/* line 22, src/_invoice.scss */
+.numerical {
+  text-align: right; }
+
 /* line 3, src/main.scss */
 header.main-header {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #37234c), color-stop(100%, #614c75));
@@ -240,3 +284,8 @@ header.main-header {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: existence; }
+
+/* line 19, src/main.scss */
+ul.table {
+  list-style: none;
+  padding: 0; }

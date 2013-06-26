@@ -1,0 +1,34 @@
+<section class="invoice main">
+  <h1>Invoice</h1>
+  <ul class="table clearfix">
+    <li>
+      <span class="label">Fakturanr.:</span>
+      <span class="value">{{invoice.invoiceNo || "-"}}</span>
+    </li>
+    <li>
+      <span class="label">Kunde:</span><span class="value">{{invoice.contact.name}}</span>
+    </li>
+    <li>
+      <span class="label">Oprettet:</span><span class="value">{{invoice.createdTime | date:'medium'}}</span>
+    </li>
+  </ul>
+  <hr />
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+      <th class="numerical">Antal</th>
+      <th>Beskrivelse</th>
+      <th class="numerical">Totalpris</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="line in invoice.lines">
+      <td class="numerical">{{line.quantity || "0"}}</td>
+      <td>{{line.description}}</td>
+      <td class="numerical">{{line.amount | currency:""}}</td>
+      <td class="numerical">
+        <a href="#">Timer</a>
+        <a href="#">Edit</a>
+        <a href="#">Del</a>
+      </td>
+    </tr>
+  </table>
+</section>
