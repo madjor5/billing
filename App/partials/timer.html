@@ -2,5 +2,6 @@
   <div class="watch">{{timer.view}}</div>
   <div class="controls">
     <input type="button" value="start" id="watch-btn" ng-click="timer.toggle()" />
+    <input type="button" value="save" ng-show="timer.counter > 0 && !timer.running" ng-click="timer.saveValue()" />
   </div>
 </div>

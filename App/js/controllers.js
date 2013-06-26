@@ -73,7 +73,7 @@ function TimerCtrl($scope, $routeParams, $timeout, $log) {
   $scope.timer = {};
   var myTimeOut;
 
-  $scope.timer.startTime = 0;
+  $scope.timer.startTime = false;
   $scope.timer.counter = 0;
   $scope.timer.running = false;
   $scope.timer.view = '00:00:00';
@@ -81,19 +81,19 @@ function TimerCtrl($scope, $routeParams, $timeout, $log) {
   $scope.timer.onTimeOut = function(){
     $scope.timer.counter++;
     $scope.timer.view = $scope.timer.convertSecondsToString($scope.timer.counter);
-    $log.info('count', $scope.timer.counter);
     // $scope.timer.counter++;
     myTimeOut = $timeout($scope.timer.onTimeOut, 1000);
   };
   $scope.timer.toggle = function() {
     if($scope.timer.running) {
-      $log.info('stop', $scope.timer);
       $timeout.cancel(myTimeOut);
+      $scope.timer.running = false;
+      $('#watch-btn').val('Start');
     } else {
       $scope.timer.running = true;
       if($scope.timer.startTime === 0) $scope.timer.startTime = new Date();
       myTimeOut = $timeout($scope.timer.onTimeOut, 1000);
-      $log.info('start', $scope.timer);
+      $('#watch-btn').val('Stop');
     }
   }
   $scope.timer.convertSecondsToString = function(sec) {
@@ -106,6 +106,9 @@ function TimerCtrl($scope, $routeParams, $timeout, $log) {
     if(seconds<10) seconds = "0"+seconds;
     var timeString = hours+":"+minutes+":"+seconds;
     return timeString;
+  } 
+  $scope.timer.saveValue = function() {
+    $log.info("save", $scope.timer.counter);
   } 
 }
 
