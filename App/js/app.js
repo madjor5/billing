@@ -10,5 +10,6 @@ angular.module('BillysBilling', ['ngCookies', 'billysBillingServices', 'http-aut
     when('/customers', {templateUrl: 'partials/customer-list.html', controller: CustomerListCtrl}).
     when('/customers/:customerID', {templateUrl: 'partials/customer-details.html', controller: CustomerDetailCtr}).
     when('/customers/:customerID/:invoiceID', {templateUrl: 'partials/invoice.html', controller: InvoiceCtrl}).
+    when('/invoice/:invoiceID/:lineID/timer', {templateUrl: 'partials/timer.html', controller: TimerCtrl}).
     otherwise({redirectTo: '/front'});
 }]);

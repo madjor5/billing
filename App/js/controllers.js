@@ -69,6 +69,46 @@ function InvoiceCtrl($scope, $routeParams, $http, $log) {
   });
 };
 
+function TimerCtrl($scope, $routeParams, $timeout, $log) {
+  $scope.timer = {};
+  var myTimeOut;
+
+  $scope.timer.startTime = 0;
+  $scope.timer.counter = 0;
+  $scope.timer.running = false;
+  $scope.timer.view = '00:00:00';
+
+  $scope.timer.onTimeOut = function(){
+    $scope.timer.counter++;
+    $scope.timer.view = $scope.timer.convertSecondsToString($scope.timer.counter);
+    $log.info('count', $scope.timer.counter);
+    // $scope.timer.counter++;
+    myTimeOut = $timeout($scope.timer.onTimeOut, 1000);
+  };
+  $scope.timer.toggle = function() {
+    if($scope.timer.running) {
+      $log.info('stop', $scope.timer);
+      $timeout.cancel(myTimeOut);
+    } else {
+      $scope.timer.running = true;
+      if($scope.timer.startTime === 0) $scope.timer.startTime = new Date();
+      myTimeOut = $timeout($scope.timer.onTimeOut, 1000);
+      $log.info('start', $scope.timer);
+    }
+  }
+  $scope.timer.convertSecondsToString = function(sec) {
+    var sec_num = parseInt(sec, 10);
+    var hours   = Math.floor(sec_num / 3600);
+    if(hours<10) hours = "0"+hours;
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    if(minutes<10) minutes = "0"+minutes;
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+    if(seconds<10) seconds = "0"+seconds;
+    var timeString = hours+":"+minutes+":"+seconds;
+    return timeString;
+  } 
+}
+
 
 /**
 *
