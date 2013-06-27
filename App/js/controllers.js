@@ -69,7 +69,7 @@ function InvoiceCtrl($scope, $routeParams, $http, $log) {
   });
 };
 
-function TimerCtrl($scope, $routeParams, $timeout, $log) {
+function TimerCtrl($scope, $routeParams, $timeout, $http, $log, $location) {
   $scope.timer = {};
   var myTimeOut;
 
@@ -106,9 +106,39 @@ function TimerCtrl($scope, $routeParams, $timeout, $log) {
     if(seconds<10) seconds = "0"+seconds;
     var timeString = hours+":"+minutes+":"+seconds;
     return timeString;
-  } 
+  }
   $scope.timer.saveValue = function() {
-    $log.info("save", $scope.timer.counter);
+    var minutes = $scope.timer.counter / 60;
+    var number = minutes / 60;
+    var hours = (Math.ceil((number) * 4) / 4).toFixed(2);
+    $log.info("save", hours);
+    $http.defaults.headers.common['Authorization'] = 'Basic '+Base64.encode($scope.appID + ':');
+    $http.get($scope.apiBaseUrl+"/invoices/"+$routeParams.invoiceID).success(function(data){
+      $log.info("invoice",data);
+      $scope.invoice = data;
+      var newQuantity = 0;
+      for(var i=0; i<data.lines.length; i++) {
+        $log.info("line", data.lines[i].id, $routeParams.lineID);
+        if(data.lines[i].id === $routeParams.lineID) {
+          $log.info("quantity", data.lines[i].quantity);
+          newQuantity = data.lines[i].quantity;
+          if(newQuantity == null) newQuantity = 0;
+          break;
+        }
+      }
+      newQuantity = (newQuantity * 1) + (hours * 1);
+      $log.info("new"+newQuantity);
+      $http.put(
+          $scope.apiBaseUrl+"/invoices/"+$routeParams.invoiceID+"/lines/"+$routeParams.lineID,
+          {
+            quantity: newQuantity
+          }
+        ).success(function(data){
+          $log.info('success', data);
+          alert('Din optagelse er nu gemt!');
+          $location.path("/customers/"+$scope.invoice.contact.id+"/"+$scope.invoice.id);
+        });
+    });
   } 
 }
 
