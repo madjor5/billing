@@ -1,5 +1,10 @@
 @import "base";
 
+body, html {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
 header.main-header {
   @include background(linear-gradient(top, $purple-dark, $purple-light));
   position: relative;
@@ -16,7 +21,31 @@ header.main-header {
   }
 }
 
-ul.table {
+
+
+section.main {
+  padding: 20px;
+}
+ul.list {
   list-style: none;
   padding: 0;
+  li {
+    border-bottom: solid 1px #ccc;
+  }
+}
+
+ul.table {
+  list-style: none;
+  padding: 0; 
+}
+
+h1, h2, h3 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Garuda, sans-serif;
+}
+a {
+  color: $purple-dark;
+  text-decoration: none;
+  &:hover {
+    color: $purple-light;
+  }
 }

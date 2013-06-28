@@ -264,6 +264,11 @@ th, td {
   text-align: right; }
 
 /* line 3, src/main.scss */
+body, html {
+  font-size: 16px;
+  line-height: 1.8; }
+
+/* line 8, src/main.scss */
 header.main-header {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #37234c), color-stop(100%, #614c75));
   background: -webkit-linear-gradient(top, #37234c, #614c75);
@@ -271,7 +276,7 @@ header.main-header {
   background: -o-linear-gradient(top, #37234c, #614c75);
   background: linear-gradient(top, #37234c, #614c75);
   position: relative; }
-  /* line 6, src/main.scss */
+  /* line 11, src/main.scss */
   header.main-header .logo {
     color: white;
     text-decoration: none;
@@ -285,7 +290,31 @@ header.main-header {
     box-sizing: border-box;
     font-family: existence; }
 
-/* line 19, src/main.scss */
+/* line 26, src/main.scss */
+section.main {
+  padding: 20px; }
+
+/* line 29, src/main.scss */
+ul.list {
+  list-style: none;
+  padding: 0; }
+  /* line 32, src/main.scss */
+  ul.list li {
+    border-bottom: solid 1px #ccc; }
+
+/* line 37, src/main.scss */
 ul.table {
   list-style: none;
   padding: 0; }
+
+/* line 42, src/main.scss */
+h1, h2, h3 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Garuda, sans-serif; }
+
+/* line 45, src/main.scss */
+a {
+  color: #37234c;
+  text-decoration: none; }
+  /* line 48, src/main.scss */
+  a:hover {
+    color: #614c75; }

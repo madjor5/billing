@@ -1,7 +1,8 @@
 <section class="main">
   <h1>Kunder</h1>
-  <ul>
+  <ul class="list">
     <li ng-repeat="customer in customers">
+      <a href="#" class="icon-edit icon-large pull-right"></a>
       <a href="#/customers/{{customer.id}}">{{customer.name}}</a>
     </li>
   </ul>
