@@ -261,7 +261,8 @@ th, td {
 
 /* line 22, src/_invoice.scss */
 .numerical {
-  text-align: right; }
+  text-align: right;
+  white-space: nowrap; }
 
 /* line 3, src/main.scss */
 body, html {
@@ -290,31 +291,83 @@ header.main-header {
     box-sizing: border-box;
     font-family: existence; }
 
-/* line 26, src/main.scss */
+/* line 24, src/main.scss */
+select.filter {
+  float: left;
+  width: 30%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 29, src/main.scss */
+input.query {
+  float: left;
+  width: 70%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 35, src/main.scss */
+ul.invoices {
+  padding-top: 30px;
+  clear: both; }
+
+/* line 41, src/main.scss */
+.cf:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* line 48, src/main.scss */
 section.main {
   padding: 20px; }
 
-/* line 29, src/main.scss */
+/* line 51, src/main.scss */
 ul.list {
   list-style: none;
-  padding: 0; }
-  /* line 32, src/main.scss */
+  padding: 0;
+  display: table; }
+  /* line 55, src/main.scss */
   ul.list li {
-    border-bottom: solid 1px #ccc; }
+    border-bottom: solid 1px #ccc;
+    display: table-row; }
+    /* line 58, src/main.scss */
+    ul.list li > a, ul.list li > span {
+      display: table-cell;
+      padding-left: 5px; }
+      /* line 61, src/main.scss */
+      ul.list li > a:first-child, ul.list li > span:first-child {
+        padding-left: 0; }
 
-/* line 37, src/main.scss */
+/* line 68, src/main.scss */
 ul.table {
   list-style: none;
   padding: 0; }
 
-/* line 42, src/main.scss */
+/* line 73, src/main.scss */
 h1, h2, h3 {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Garuda, sans-serif; }
 
-/* line 45, src/main.scss */
+/* line 76, src/main.scss */
 a {
   color: #37234c;
   text-decoration: none; }
-  /* line 48, src/main.scss */
+  /* line 79, src/main.scss */
   a:hover {
     color: #614c75; }
+
+/* line 85, src/main.scss */
+.watch {
+  text-align: center;
+  margin: 30px;
+  border: solid 3px #333333;
+  font-size: 40px; }
+
+/* line 91, src/main.scss */
+#watch-btn, #watch-save {
+  display: inline-block;
+  margin: 10px 30px;
+  font-size: 30px; }
+  /* line 95, src/main.scss */
+  #watch-btn#watch-save, #watch-save#watch-save {
+    float: right; }

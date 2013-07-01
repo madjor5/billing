@@ -21,7 +21,29 @@ header.main-header {
   }
 }
 
+select.filter {
+  float: left;
+  width: 30%;
+  @include box-sizing(border-box);
+}
+input.query {
+  float: left;
+  width:70%;
+  @include box-sizing(border-box);
+}
 
+ul.invoices {
+  padding-top: 30px;
+  clear: both;
+}
+
+.cf{
+  &:after{
+    content:"";
+    display:table;
+    clear:both;
+  }
+}
 
 section.main {
   padding: 20px;
@@ -29,8 +51,17 @@ section.main {
 ul.list {
   list-style: none;
   padding: 0;
+  display: table;
   li {
     border-bottom: solid 1px #ccc;
+    display: table-row;
+    &>a, &>span {
+      display: table-cell;
+      padding-left: 5px;
+      &:first-child {
+        padding-left: 0;
+      }
+    }
   }
 }
 
@@ -47,5 +78,21 @@ a {
   text-decoration: none;
   &:hover {
     color: $purple-light;
+  }
+}
+
+
+.watch {
+  text-align: center;
+  margin: 30px;
+  border: solid 3px $gray;
+  font-size: 40px;
+}
+#watch-btn, #watch-save {
+  display: inline-block;
+  margin: 10px 30px;
+  font-size: 30px;
+  &#watch-save {
+    float: right;
   }
 }

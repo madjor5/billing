@@ -17,19 +17,17 @@
     <tr>
       <th class="numerical">Antal</th>
       <th>Beskrivelse</th>
-      <th>Product</th>
       <th class="numerical">Totalpris</th>
       <th></th>
     </tr>
     <tr ng-repeat="line in invoice.lines">
       <td class="numerical">{{line.quantity || "0"}}</td>
       <td>{{line.description}}</td>
-      <td>{{line.product.name}}</td>
       <td class="numerical">{{line.amount | currency:""}}</td>
       <td class="numerical">
-        <a href="#/invoice/{{invoice.id}}/{{line.id}}/timer">Timer</a>
-        <a href="#">Edit</a>
-        <a href="#">Del</a>
+        <a href="#/invoice/{{invoice.id}}/{{line.id}}/timer"class="icon-time icon-large"></a>
+        <a href="#" class="icon-edit icon-large"></a>
+        <a href="#" class="icon-remove icon-large"></a>
       </td>
     </tr>
   </table>

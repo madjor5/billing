@@ -2,18 +2,24 @@
   <h1>{{contact.name}}</h1>
   
   <h2>Invoices</h2>
-  <select name="filter" ng-model="filter">
-    <option value="">All</option>
-    <option value="draft">Open</option>
-    <option value="approved">Closed</option>
-  </select>
-  <input type="search" name="query" ng-model="query" />
-  <ul class="invoices">
+  <div class="cf">
+    <select name="filter" class="filter" ng-model="filter">
+      <option value="">All</option>
+      <option value="draft">Open</option>
+      <option value="approved">Closed</option>
+    </select>
+    <input type="search" name="query" ng-model="query" class="query" />
+  </div>
+  <ul class="invoices list">
     <li ng-repeat="invoice in invoices | filter:query | filter:filter">
       <span class="invoiceNo">{{invoice.invoiceNo || "-"}}</span>
       <a href="#/customers/{{contact.id}}/{{invoice.id}}">{{invoice.lines[0].description || invoice.lines[0].product.name}}</a>
       <span class="date">{{invoice.createdTime | date:shortDate}}</span>
       <span class="price">{{invoice.amount | currency:""}}</span>
+      <span class="numerical">
+        <a href="#" class="icon-edit icon-large"></a>
+        <a href="#" class="icon-remove icon-large"></a>
+      </span>
     </li>
   </ul>
 </section>
